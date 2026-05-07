@@ -1,0 +1,98 @@
+export const botAiWorkflowPayload = "GET /checkout?session=auto&retry=1";
+
+export const botAiWorkflowStages = [
+  {
+    id: "botRequest",
+    title: "Bot Sends Automated Requests",
+    description: "Automated agents generate repeated requests.",
+    status: "Bot traffic detected",
+    severity: "Medium",
+    request: "Automated session traffic",
+    vector: "Bot traffic",
+    explanation:
+      "Bots initiate rapid requests that resemble human traffic at first.",
+  },
+  {
+    id: "reverseProxy",
+    title: "Reverse Proxy (NGINX / HAProxy)",
+    description: "Routes requests into the inspection pipeline.",
+    status: "Traffic routed",
+    severity: "Medium",
+    request: "Proxy forwarding",
+    vector: "Edge proxy",
+    explanation:
+      "The proxy forwards traffic to monitoring and analysis layers.",
+  },
+  {
+    id: "monitoring",
+    title: "Traffic Monitoring Layer",
+    description: "Collects traffic telemetry and session metadata.",
+    status: "Monitoring active",
+    severity: "Medium",
+    request: "Telemetry collected",
+    vector: "Telemetry",
+    explanation: "Signals are collected for downstream feature extraction.",
+  },
+  {
+    id: "featureExtraction",
+    title: "Feature Extraction",
+    description:
+      "Mouse movement, click speed, frequency, user-agent, session behavior.",
+    status: "Features extracted",
+    severity: "High",
+    request: "Feature vector ready",
+    vector: "Behavioral analytics",
+    explanation: "Behavioral and request patterns are encoded for AI scoring.",
+  },
+  {
+    id: "aiEngine",
+    title: "AI Detection Engine",
+    description: "Autoencoder, Isolation Forest, and behavior profiling.",
+    status: "Models scoring",
+    severity: "High",
+    request: "AI inference running",
+    vector: "ML inference",
+    explanation: "Multiple models evaluate anomalies and automation patterns.",
+  },
+  {
+    id: "threatScoring",
+    title: "Threat Scoring Engine",
+    description: "Aggregates model outputs into a risk score.",
+    status: "Risk scored",
+    severity: "High",
+    request: "Threat score: 79/100",
+    vector: "Risk aggregator",
+    explanation: "AI outputs are combined into a single risk score.",
+  },
+  {
+    id: "decision",
+    title: "Decision Engine",
+    description: "Allow, CAPTCHA, rate-limit, or block.",
+    status: "Decision issued",
+    severity: "Critical",
+    request: "Action: CAPTCHA",
+    vector: "Policy engine",
+    explanation: "Policy enforcement protects the service from automation.",
+  },
+  {
+    id: "logging",
+    title: "Dashboard + Alerts + Logs",
+    description: "Stores logs and triggers alerts.",
+    status: "Alert recorded",
+    severity: "Medium",
+    request: "Dashboard updated",
+    vector: "SOC dashboard",
+    explanation: "Teams receive alerts and can review incidents.",
+  },
+];
+
+export const botAiTransformations = [
+  "Automated traffic hits the edge",
+  "Proxy routes requests",
+  "Telemetry captured",
+  "Behavioral features extracted",
+  "AI models score anomalies",
+  "Risk score aggregated",
+  "Allow / CAPTCHA / rate-limit / block",
+  "Alerts and logs updated",
+];

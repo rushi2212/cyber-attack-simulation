@@ -1,0 +1,138 @@
+export const ddosStages = [
+  {
+    id: "botnet",
+    title: "Hacker controls botnet",
+    requestStatus: "Command & control active",
+    severity: "Medium",
+    detection: "Monitoring",
+    explanation:
+      "The attacker coordinates thousands of compromised devices to prepare a synchronized flood.",
+    metrics: {
+      rps: 1200,
+      bots: 180,
+      cpu: 18,
+      bandwidth: 120,
+      blocked: 0,
+      firewall: "Scanning",
+    },
+  },
+  {
+    id: "bots",
+    title: "Multiple bots generate requests",
+    requestStatus: "Bots online",
+    severity: "Medium",
+    detection: "Monitoring",
+    explanation:
+      "Bot nodes begin firing coordinated requests toward the target service.",
+    metrics: {
+      rps: 5200,
+      bots: 420,
+      cpu: 32,
+      bandwidth: 220,
+      blocked: 40,
+      firewall: "Scanning",
+    },
+  },
+  {
+    id: "flood",
+    title: "Massive traffic flood",
+    requestStatus: "Traffic surge",
+    severity: "High",
+    detection: "Suspicious",
+    explanation:
+      "The coordinated flood overwhelms the network edge with large volumes of traffic.",
+    metrics: {
+      rps: 14800,
+      bots: 820,
+      cpu: 66,
+      bandwidth: 480,
+      blocked: 180,
+      firewall: "Alerting",
+    },
+  },
+  {
+    id: "network",
+    title: "Requests travel through network",
+    requestStatus: "Network congestion",
+    severity: "High",
+    detection: "Suspicious",
+    explanation:
+      "Packets traverse the internet backbone, causing congestion and latency spikes.",
+    metrics: {
+      rps: 18000,
+      bots: 960,
+      cpu: 72,
+      bandwidth: 620,
+      blocked: 240,
+      firewall: "Alerting",
+    },
+  },
+  {
+    id: "overload",
+    title: "Server resources overload",
+    requestStatus: "Resource saturation",
+    severity: "Critical",
+    detection: "Detected",
+    explanation:
+      "CPU and memory are exhausted while legitimate traffic is delayed or dropped.",
+    metrics: {
+      rps: 23000,
+      bots: 1050,
+      cpu: 92,
+      bandwidth: 780,
+      blocked: 420,
+      firewall: "Mitigating",
+    },
+  },
+  {
+    id: "crash",
+    title: "Server slowdown/crash",
+    requestStatus: "Service degraded",
+    severity: "Critical",
+    detection: "Detected",
+    explanation:
+      "The service slows or crashes, causing downtime for legitimate users.",
+    metrics: {
+      rps: 26000,
+      bots: 1120,
+      cpu: 98,
+      bandwidth: 860,
+      blocked: 540,
+      firewall: "Mitigating",
+    },
+  },
+  {
+    id: "waf",
+    title: "Firewall/WAF detection",
+    requestStatus: "Filtering malicious traffic",
+    severity: "High",
+    detection: "Detected",
+    explanation:
+      "Edge defenses activate rules and begin filtering malicious signatures.",
+    metrics: {
+      rps: 20000,
+      bots: 980,
+      cpu: 84,
+      bandwidth: 640,
+      blocked: 900,
+      firewall: "Blocking",
+    },
+  },
+  {
+    id: "mitigation",
+    title: "Traffic filtering and mitigation",
+    requestStatus: "Mitigation active",
+    severity: "High",
+    detection: "Blocked",
+    explanation:
+      "Rate limiting and scrubbing centers reduce attack impact while service recovers.",
+    metrics: {
+      rps: 8200,
+      bots: 460,
+      cpu: 54,
+      bandwidth: 320,
+      blocked: 1600,
+      firewall: "Stabilized",
+    },
+  },
+];
