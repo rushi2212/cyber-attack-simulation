@@ -35,6 +35,10 @@ function Navbar() {
           Workflow
         </NavLink>
 
+        <NavLink to="/attack-flow" className="hover:text-green-400">
+          Attack Flow
+        </NavLink>
+
         <NavLink to="/dashboard" className="hover:text-green-400">
           Dashboard
         </NavLink>

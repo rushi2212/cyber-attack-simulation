@@ -6,6 +6,7 @@ import XssPage from "./pages/XssPage";
 import BotPage from "./pages/BotPage";
 import WorkflowPage from "./pages/WorkflowPage";
 import Dashboard from "./pages/Dashboard";
+import AttackFlowPage from "./pages/AttackFlowPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/bot" element={<BotPage />} />
       <Route path="/workflow" element={<WorkflowPage />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/attack-flow" element={<AttackFlowPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
